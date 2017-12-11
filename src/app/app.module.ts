@@ -39,6 +39,7 @@ import {AuthenticationService} from './services/authentication.service.client';
 import {FlickrService} from './services/flickr.service.client';
 import {SortableDirective} from './directives/sortable.directive';
 import { ApplicationComponent } from './components/application/application.component';
+import {ApplicationService} from "./services/application.service.client";
 
 
 @NgModule({
@@ -78,7 +79,7 @@ import { ApplicationComponent } from './components/application/application.compo
     Routing
   ],
   // Client Side services here
-  providers: [ TestService, UserService, WebsiteService, PageService, WidgetService, SharedService, AuthenticationService, FlickrService],
+  providers: [ TestService, UserService, WebsiteService, PageService, WidgetService, SharedService, AuthenticationService, FlickrService, ApplicationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -106,6 +106,7 @@ var _a;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__services_authentication_service_client__ = __webpack_require__("../../../../../src/app/services/authentication.service.client.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__services_flickr_service_client__ = __webpack_require__("../../../../../src/app/services/flickr.service.client.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__components_application_application_component__ = __webpack_require__("../../../../../src/app/components/application/application.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__services_application_service_client__ = __webpack_require__("../../../../../src/app/services/application.service.client.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -150,6 +151,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 // import { FlickrImageSearchComponent } from './components/widget/widget-edit/widget-image/flickr-image-search/flickr-image-search.component';
 
 
+
 var AppModule = (function () {
     function AppModule() {
     }
@@ -189,7 +191,7 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_5__app_routing__["a" /* Routing */]
         ],
         // Client Side services here
-        providers: [__WEBPACK_IMPORTED_MODULE_8__services_test_service_client__["a" /* TestService */], __WEBPACK_IMPORTED_MODULE_14__services_user_service_client__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_15__services_website_service_client__["a" /* WebsiteService */], __WEBPACK_IMPORTED_MODULE_16__services_page_service_client__["a" /* PageService */], __WEBPACK_IMPORTED_MODULE_17__services_widget_service_client__["a" /* WidgetService */], __WEBPACK_IMPORTED_MODULE_19__services_shared_service_client__["a" /* SharedService */], __WEBPACK_IMPORTED_MODULE_20__services_authentication_service_client__["a" /* AuthenticationService */], __WEBPACK_IMPORTED_MODULE_21__services_flickr_service_client__["a" /* FlickrService */]],
+        providers: [__WEBPACK_IMPORTED_MODULE_8__services_test_service_client__["a" /* TestService */], __WEBPACK_IMPORTED_MODULE_14__services_user_service_client__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_15__services_website_service_client__["a" /* WebsiteService */], __WEBPACK_IMPORTED_MODULE_16__services_page_service_client__["a" /* PageService */], __WEBPACK_IMPORTED_MODULE_17__services_widget_service_client__["a" /* WidgetService */], __WEBPACK_IMPORTED_MODULE_19__services_shared_service_client__["a" /* SharedService */], __WEBPACK_IMPORTED_MODULE_20__services_authentication_service_client__["a" /* AuthenticationService */], __WEBPACK_IMPORTED_MODULE_21__services_flickr_service_client__["a" /* FlickrService */], __WEBPACK_IMPORTED_MODULE_23__services_application_service_client__["a" /* ApplicationService */]],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_2__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
@@ -289,7 +291,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/application/application.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  application works!\n</p>\n"
+module.exports = "<nav class=\"navbar navbar-fixed-top\">\n  <div class=\"row container-fluid\">\n\n    <div class=\"dg-nav-items navbar-text pull-left\" style=\"margin-left: 0px\">\n      <a [routerLink]=\"['/user']\">\n        <span class=\"glyphicon glyphicon-chevron-left\" style=\"margin-left: 15px\"></span>\n      </a>\n    </div>\n\n    <div class=\"dg-nav-items navbar-header pull-left\" style=\"margin-left: 10px;\n            margin-top: 5px\">\n      <a class=\"navbar-brand\">\n        <b>Websites</b>\n      </a>\n    </div>\n    <div class=\"dg-nav-items navbar-text pull-right\" style=\"margin-right: 0px\">\n      <a href=\"#\">\n        <span class=\"glyphicon glyphicon-plus\" style=\"margin-right: 15px\"></span>\n      </a>\n    </div>\n\n  </div>\n</nav>\n\n<div class=\"container-fluid\" style=\"margin-top: 70px\">\n  <ul class=\"list-group\">\n    <li>\n      <a href=\"#\"> Handlers</a>\n    </li>\n    <li>\n      <a href=\"#\"> Widgets </a>\n    </li>\n    <!--<li *ngFor=\"let website of websites\" class=\"list-group-item\">-->\n      <!--<a [routerLink]=\"['/website', website._id,'page']\">-->\n        <!--{{website.name}}-->\n      <!--</a>-->\n      <!--<a [routerLink]=\"['/website', website._id]\"-->\n         <!--class=\"pull-right\">-->\n        <!--<span class=\"glyphicon glyphicon-cog\"></span>-->\n      <!--</a>-->\n    <!--</li>-->\n  </ul>\n</div>\n\n\n<footer class=\"footer\">\n  <div class=\"container-fluid\">\n    <a [routerLink]=\"['/user']\">\n      <span class= \"glyphicon glyphicon-user pull-right\" style=\"font-size: 30px; color: white\"></span>\n    </a>\n  </div>\n</footer>\n"
 
 /***/ }),
 
@@ -879,6 +881,56 @@ var User = (function () {
 }());
 
 //# sourceMappingURL=user.model.client.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/services/application.service.client.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ApplicationService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shared_service_client__ = __webpack_require__("../../../../../src/app/services/shared.service.client.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var ApplicationService = (function () {
+    function ApplicationService(sharedService, http, router) {
+        this.sharedService = sharedService;
+        this.http = http;
+        this.router = router;
+        this.baseUrl = __WEBPACK_IMPORTED_MODULE_4__environments_environment__["a" /* environment */].baseUrl;
+    }
+    ApplicationService.prototype.findAllAplications = function () {
+        var url = this.baseUrl + '/api/application';
+        return this.http.get(url)
+            .map(function (response) {
+            return response.json();
+        });
+    };
+    return ApplicationService;
+}());
+ApplicationService = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["C" /* Injectable */])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__shared_service_client__["a" /* SharedService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__shared_service_client__["a" /* SharedService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _c || Object])
+], ApplicationService);
+
+var _a, _b, _c;
+//# sourceMappingURL=application.service.client.js.map
 
 /***/ }),
 
