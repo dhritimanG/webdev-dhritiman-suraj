@@ -49,4 +49,6 @@ app.get('*', function (req, res) {
 });
 
 
-server.listen( port , () => console.log('Running'));
+server.listen(port, function() {
+    console.log("App is running on port " + port);
+});
